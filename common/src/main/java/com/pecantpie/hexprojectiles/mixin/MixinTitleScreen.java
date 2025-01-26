@@ -1,6 +1,6 @@
-package net.examplemod.mixin;
+package com.pecantpie.hexprojectiles.mixin;
 
-import net.examplemod.ExampleMod;
+import com.pecantpie.hexprojectiles.HexProjectiles;
 import net.minecraft.client.gui.screens.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinTitleScreen {
     @Inject(at = @At("HEAD"), method = "init()V")
     private void init(CallbackInfo info) {
-        ExampleMod.LOGGER.info("Hello from {}!", ExampleMod.class.getName());
+        HexProjectiles.LOGGER.info("Hello from {}!", HexProjectiles.class.getName());
     }
 }

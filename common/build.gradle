@@ -3,7 +3,7 @@ architectury {
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/examplemod.accesswidener")
+    accessWidenerPath = file("src/main/resources/hexprojectiles.accesswidener")
 }
 
 repositories {
@@ -23,6 +23,13 @@ repositories {
 
     maven { url = "https://api.modrinth.com/maven" } // LazyDFU
     maven { url = "https://maven.terraformersmc.com/releases" } // Mod Menu, EMI
+
+    maven { // CBC and RPL
+        url = "https://maven.realrobotix.me/master/"
+        content {
+            includeGroup("com.rbasamoyai")
+        }
+    }
 }
 
 dependencies {
@@ -35,4 +42,8 @@ dependencies {
     // All dependencies except Flywheel and Registrate are NOT safe to use!
     // Flywheel and Registrate must also be used carefully due to differences across loaders.
     modCompileOnly("com.simibubi.create:create-fabric-$minecraft_version:$create_fabric_version")
+
+    // CBC
+//    modCompileOnly("com.rbasamoyai:createbigcannons-common-${minecraft_version}:${cbc_version}")
+//    modCompileOnly("com.rbasamoyai:ritchiesprojectilelib:${rpl_version}+${minecraft_version}-common")
 }

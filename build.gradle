@@ -18,7 +18,7 @@ subprojects {
         maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
 
         // mavens used on both forge and fabric
-        maven { url = "https://maven.blamejared.com/" } // JEI
+        maven { url = "https://maven.blamejared.com/" } // JEI and Hex casting
         maven { url = "https://maven.tterrag.com/" } // Flywheel on both, Create and Registrate on forge
     }
 
@@ -26,8 +26,6 @@ subprojects {
         minecraft "com.mojang:minecraft:$minecraft_version"
         // Can't use parchment for some reason, game ends up completely unmapped
         mappings loom.officialMojangMappings()
-
-        // see each subproject for more dependencies.
     }
 }
 
@@ -50,5 +48,50 @@ allprojects {
 
     java {
         withSourcesJar()
+    }
+
+    repositories {
+        // Hex casting ones
+        maven {
+            name "entity reach"
+            url "https://maven.jamieswhiteshirt.com/libs-release/"
+        }
+        maven { url "https://mvn.devos.one/snapshots/" }
+        maven {
+            name = 'Ladysnake Mods'
+            url = 'https://maven.ladysnake.org/releases'
+        }
+        maven {
+            name = 'Kotlin for Forge'
+            url = 'https://thedarkcolour.github.io/KotlinForForge/'
+        }
+        maven {
+            url = "https://maven.theillusivec4.top/"
+        }
+        maven {
+            name = 'GeckoLib'
+            url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        }
+        maven {
+            url = "https://cursemaven.com"
+        }
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = "Modrinth"
+                    url = "https://api.modrinth.com/maven"
+                }
+            }
+            filter {
+                includeGroup "maven.modrinth"
+            }
+        }
+
+        maven { // CBC and RPL
+            url = "https://maven.realrobotix.me/master/"
+            content {
+                includeGroup("com.rbasamoyai")
+            }
+        }
     }
 }

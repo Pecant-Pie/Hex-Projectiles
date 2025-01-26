@@ -1,32 +1,33 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "hexprojectiles",
   "version": "${version}",
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Hex Projectiles",
+  "description": "A minecraft mod that adds integration between Hex Casting and Create: Big Cannons.",
   "authors": [
-    "Me!"
+    "PecantPie"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
   "license": "Insert License Here",
-  "icon": "assets/examplemod/icon.png",
+  "icon": "assets/hexprojectiles/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.examplemod.fabric.ExampleModFabric"
+      "com.pecantpie.hexprojectiles.fabric.HexProjectilesFabric"
     ]
   },
   "mixins": [
-    "examplemod.mixins.json",
-    "examplemod-common.mixins.json"
+    "hexprojectiles.mixins.json",
+    "hexprojectiles-common.mixins.json"
   ],
   "depends": {
     "minecraft": "${minecraft_version}",
     "fabricloader": ">=${fabric_loader_version}",
     "fabric-api": ">=${fabric_api_version}",
-    "create": "${create_version}"
+    "create": "${create_version}",
+    "createbigcannons": ">=${cbc_version}"
   }
 }

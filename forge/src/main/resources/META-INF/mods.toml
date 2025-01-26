@@ -1,35 +1,42 @@
 modLoader = "javafml"
 loaderVersion = "[${forge_version},)"
 #issueTrackerURL = ""
-license = "Insert License Here"
+license = "MIT License"
 
 [[mods]]
-modId = "examplemod"
+modId = "hexprojectiles"
 version = "${version}"
-displayName = "Example Mod"
-authors = "Me!"
+displayName = "Hex Projectiles"
+authors = "PecantPie"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+A minecraft mod that adds integration between Hex Casting and Create: Big Cannons.
 '''
 logoFile = "icon.png"
 
-[[dependencies.examplemod]]
+[[dependencies.hexprojectiles]]
 modId = "forge"
 mandatory = true
 versionRange = "[${forge_version},)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.examplemod]]
+[[dependencies.hexprojectiles]]
 modId = "minecraft"
 mandatory = true
 versionRange = "${minecraft_version}"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.examplemod]]
+[[dependencies.hexprojectiles]]
 modId="create"
 mandatory=true
 versionRange="${create_version}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.hexprojectiles]]
+modId="createbigcannons"
+mandatory=true
+versionRange="${cbc_version}"
 ordering="NONE"
 side="BOTH"
